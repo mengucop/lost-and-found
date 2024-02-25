@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <title>Registration</title>
 </head>
 <body>
-    <h1>Home</h1>
-    <p>Welcome to the home page!</p>
+    <h1>Registration</h1>
+    <p>Welcome to the registration page!</p>
 
     <form action="" method="POST">
         @csrf
+        <input type="text" name="name" placeholder="Enter Your Name">
         <input type="text" name="email" placeholder="Enter Your Email">
         <input type="password" name="password" placeholder="Enter Your Password">
-        <input type="submit" value="Login">
+        <input type="submit" value="Register">
     </form>
     <p>
-        Don't have an account?
-        <a href="register">Go make account!</a>
+        Already have an account?
+        <a href="home">Go login!</a>
     </p>
 </body>
 </html>
