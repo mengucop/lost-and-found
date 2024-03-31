@@ -14,16 +14,16 @@
         <h4 class="italic">Your Place To Go For All Sorts Of Missing Or Retrieved Items</h4>
     </div>
 
-    <div>
-        <form action="{{ route('login') }}" method="post">
+    <div class="justify-center">
+        <form  action="{{ route('login') }}" method="post">
             @csrf
-            <input class="border" type="email" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
-            <button type="submit">Login</button>
+            <input class="border border-solid border-black" type="email" name="email" placeholder="Enter Your Email">
+            <br><br>
+            <input class="border border-solid border-black" type="password" name="password" placeholder="Enter Your Password">
+            <br><br>
+            <button class="p-4 bg-sky-200 text-center hover:bg-sky-400 " type="submit">Login</button>
         </form>
     </div>
     
-
-
 </body>                
 </html>
