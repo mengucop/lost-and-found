@@ -15,12 +15,12 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $username = $request->input('username');
+        $email = $request->input('email');
         $password = $request->input('password');
 
-        $student = Student::where('username', $username)->first();
+        $student = Student::where('email', $email)->first();
 
-        if ($student) 
+        if($student) 
         {
             if ($student->password == $password) 
             {
@@ -30,7 +30,7 @@ class LoginController extends Controller
         }
         else
         {
-            return redirect()->route('login');
+            return redirect()->route('/');
         }
     }
 }

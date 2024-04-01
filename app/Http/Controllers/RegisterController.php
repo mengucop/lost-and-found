@@ -22,15 +22,15 @@ class RegisterController extends Controller
             'password' => 'required'
         ]);
 
-        $user = Student::create([
+        $student = Student::create([
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,
             'password' => $request->password
         ]);
 
-        //$request->session()->put('student', $user);
+        //$request->session()->put('student', $student);
         
-        return redirect()->route('home');
+        return redirect('/');
     }
 }

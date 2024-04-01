@@ -20,8 +20,6 @@ class HomeController extends Controller
             $student = Student::where('email', $email)->first();
             $name = $student->name;
             return view('home', ['name' => $name]);
-
-
         }
     }
 
