@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('password');
             $table->integer('lost')->default(0);
             $table->integer('found')->default(0);
-            $table->integer('delivered')->default(0);
+            $table->integer('found_delivered')->default(0);
+            $table->integer('lost_received')->default(0);
         });
     }
 
