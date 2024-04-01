@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Models\Student;
 
 class RegisterController extends Controller
@@ -16,16 +17,20 @@ class RegisterController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:6',
+            'username' => ['required', Rule::unique('students', 'username')],
+            'email' => ['required', Rule::unique('students', 'email')],
+            'password' => 'required'
         ]);
 
-        $user = new Student();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        $user->save();
+        $user = Student::create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
 
+        //$request->session()->put('student', $user);
+        
         return redirect()->route('home');
     }
 }

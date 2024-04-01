@@ -21,6 +21,8 @@
                 <br><br>
                 <input class="px-20 py-1 border border-solid border-black" type="email" name="email" placeholder="Enter Your Email">
                 <br><br>
+                <input class="px-20 py-1 border border-solid border-black" type="text" name="username" placeholder="Enter Your Username">
+                <br><br>
                 <input class="px-20 py-1 border border-solid border-black" type="password" name="password" placeholder="Enter Your Password">
                 <br><br>
                 <button class="grid justify-items-center p-4 bg-sky-200 text-center hover:bg-sky-400 " type="submit">Register</button>

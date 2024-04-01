@@ -33,10 +33,4 @@ class LoginController extends Controller
             return redirect()->route('login');
         }
     }
-
-    public function logout(Request $request)
-    {
-        $request->session()->forget('student');
-        return redirect()->route('home');
-    }
 }
