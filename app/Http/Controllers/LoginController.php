@@ -24,13 +24,17 @@ class LoginController extends Controller
         {
             if ($student->password == $password) 
             {
-                $request->session()->put('student', $student);
-                return redirect()->route('home');
+                $session = $request->session()->put('student', $student);
+                return redirect('/home/'. $student->username);
+            }
+            else
+            {
+                return redirect('/');
             }
         }
         else
         {
-            return redirect()->route('/');
+            return redirect('/');
         }
     }
 }

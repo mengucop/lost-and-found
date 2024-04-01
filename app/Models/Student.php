@@ -18,4 +18,9 @@ class Student extends Model
 
     protected $created_at = false;
     protected $updated_at = false;
+
+    public function studentItems()
+    {
+        return $this->hasMany(Item::class);
+    }
 }

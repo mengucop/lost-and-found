@@ -11,19 +11,12 @@ class HomeController extends Controller
 {
     public function index(Session $session)
     {
-        if($session->get('email') == null) {
-            return redirect('/');
-        }
-        else
-        {
-            $email = $session->get('email');
-            $student = Student::where('email', $email)->first();
-            $name = $student->name;
-            return view('home', ['name' => $name]);
-        }
+        $email = $session->get('email');
+        $student = Student::where('email', $email)->first();
+        return view('home', ['student' => $student]);
     }
 
-    public function add(Request $request, $id)
+    public function add(Request $request, $username)
     {
         $item = new Item;
         $item->from = $request->from;
@@ -32,6 +25,6 @@ class HomeController extends Controller
         $item->type = $request->type;
         $item->status = $request->status;
         $item->save();
-        return redirect('/home/' . $id);
+        return redirect('/home/' . $username);
     }
 }

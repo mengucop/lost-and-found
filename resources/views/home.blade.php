@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>LF - {{ $name }}</title>
+    <title>LF - Homepage</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @vite('resources/css/app.css')
@@ -15,8 +15,8 @@
     </div>
     
     <a href="/logout"><p>Logout</p></a>
-
-    <form action="{{ route('home') }}" method="POST" enctype="multipart/form-data">
+<!--
+    <form action="/home/" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="p-20 grid justify-items-center">
             <div>
@@ -38,6 +38,6 @@
                 <button type="submit" class="bg-blue-500 text-white p-2 rounded-lg">Submit</button>
             </div>
         </div>
-    </form>
+    </form> -->
 </body>
 </html>
