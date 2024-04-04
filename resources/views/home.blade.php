@@ -14,8 +14,9 @@
         <h4 class="italic">Your Place To Go For All Sorts Of Missing Or Retrieved Items</h4>
     </div>
     
+    <p class="text-center text-2xl">Welcome, {{ session()->get('student')->name }}</p>
     <a href="/logout"><p>Logout</p></a>
-<!--
+
     <form action="/home/" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="p-20 grid justify-items-center">
@@ -38,6 +39,6 @@
                 <button type="submit" class="bg-blue-500 text-white p-2 rounded-lg">Submit</button>
             </div>
         </div>
-    </form> -->
+    </form>
 </body>
 </html>

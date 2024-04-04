@@ -9,11 +9,14 @@ use Illuminate\Contracts\Session\Session;
 
 class HomeController extends Controller
 {
-    public function index(Session $session)
+    public function index()
     {
-        $email = $session->get('email');
-        $student = Student::where('email', $email)->first();
-        return view('home', ['student' => $student]);
+        if(!session()->has('student'))
+        {
+            return redirect('/');
+        }
+
+        return view('home');
     }
 
     public function add(Request $request, $username)
