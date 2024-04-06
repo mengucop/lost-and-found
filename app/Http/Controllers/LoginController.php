@@ -7,9 +7,13 @@ use App\Models\Student;
 
 class LoginController extends Controller
 {
-    //
     public function index()
     {
+        if(session()->has('student'))
+        {
+            return redirect('/home/'. session('student')->username);
+        }
+        
         return view('login');
     }
 

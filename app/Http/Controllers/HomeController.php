@@ -16,6 +16,12 @@ class HomeController extends Controller
             return redirect('/');
         }
 
+        // $username = session('student')->username;
+        // if("/home/".$username != request()->route()->getName())
+        // {
+        //     return redirect("/home/".$username);
+        // }
+
         return view('home');
     }
 
