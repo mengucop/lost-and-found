@@ -25,15 +25,15 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function add(Request $request, $username)
+    public function add(Request $request)
     {
         $item = new Item;
-        $item->from = $request->from;
+        $item->from = session('student')->email;
         $item->description = $request->description;
         $item->pic = $request->pic;
         $item->type = $request->type;
-        $item->status = $request->status;
+        $item->status = "Unresolved";
         $item->save();
-        return redirect('/home/' . $username);
+        return redirect('/home/' . session('student')->username);
     }
 }

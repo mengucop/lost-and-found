@@ -1,17 +1,6 @@
-<html>
-<head>
-    <title>LF - {{ session()->get('student')->name }}</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
-</head>
+<x-header>{{ session('student')->name }}</x-header>
 <body>
-    <div class="bg-sky-200 text-center py-5 text-xl">
-        <h1 class="text-3xl">Lost & Found</h1>
-        <br><br><br>
-        <h4 class="italic">Your Place To Go For All Sorts Of Missing Or Retrieved Items</h4>
-    </div>
+    <x-info></x-info>
 
     <div class="text-center">
         <li class="text-sky-400 underline hover:text-sky-600">

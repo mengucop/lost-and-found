@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>LF - Homepage</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
-</head>
+<x-header>Homepage</x-header>
 <body>
-    <div class="bg-sky-200 text-center py-5 text-xl">
-        <h1 class="text-3xl">Lost & Found</h1>
-        <br><br><br>
-        <h4 class="italic">Your Place To Go For All Sorts Of Missing Or Retrieved Items</h4>
-    </div>
+    <x-info></x-info>
     
-    <p class="text-center text-2xl">Welcome, {{ session()->get('student')->name }}</p>
-    <div  class="border border-solid border-2 text-center ">
+    <div  class="text-center">
         <li class="text-sky-400 underline hover:text-sky-600">
             <a href="/profile/{{ session()->get('student')->username }}"><p>Profile</p></a>
         </li>
@@ -29,18 +16,18 @@
         <div class="p-20 grid justify-items-center">
             <div>
                 <label for="type">Type</label>
-                <select name="type" id="type" class="border-2 border-black p-2 rounded-lg" required>
+                <select name="type" id="type" class="border border-black p-2 rounded-lg" required>
                     <option value="missing">Missing</option>
                     <option value="retrieved">Retrieved</option>
                 </select>
             </div>
             <div>
                 <label for="desc">Add Description</label>
-                <input type="text" name="desc" id="desc" class="border-2 border-black p-2 rounded-lg" required>
+                <input type="text" name="desc" id="desc" class="border border-black p-2 rounded-lg" required>
             </div>
             <div>
                 <label for="image">Add an Image</label>
-                <input type="file" name="image" id="image" class="border-2 border-black p-2 rounded-lg" required>
+                <input type="file" name="image" id="image" class="border border-black p-2 rounded-lg" required>
             </div>
             <div>
                 <x-button>Upload</x-button>
