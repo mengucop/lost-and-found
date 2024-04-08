@@ -16,4 +16,12 @@ class ProfileController extends Controller
         
         return view('profile');
     }
+
+    public function profile_update(Request $request)
+    {
+        $new_name = $request->input('name');
+        session('student')->name = $new_name;
+        Student::where('username', session('student')->username)->update(['name' => $new_name]);
+        return view('profile');
+    }
 }

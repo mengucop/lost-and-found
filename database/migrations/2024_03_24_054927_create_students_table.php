@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('found')->default(0);
             $table->integer('found_delivered')->default(0);
             $table->integer('lost_received')->default(0);
+            $table->timestamps();
         });
     }
 
