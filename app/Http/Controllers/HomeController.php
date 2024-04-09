@@ -16,12 +16,6 @@ class HomeController extends Controller
             return redirect('/');
         }
 
-        // $username = session('student')->username;
-        // if("/home/".$username != request()->route()->getName())
-        // {
-        //     return redirect("/home/".$username);
-        // }
-
         return view('home');
     }
 
@@ -36,13 +30,15 @@ class HomeController extends Controller
         $count = 0;
         if($request->type == "missing")
         {
-            Student::where('email', session('student')->email)->update(['lost' => session('student')->lost + 1]);
             $count = session('student')->lost + 1;
+            Student::where('email', session('student')->email)->update(['lost' => $count]);
+            session('student')->lost = $count;
         }
         else
         {
-            Student::where('email', session('student')->email)->update(['found' => session('student')->found + 1]);
             $count = session('student')->found + 1;
+            Student::where('email', session('student')->email)->update(['found' => $count]);
+            session('student')->found = $count;
         }
 
         $image = $request->pic;

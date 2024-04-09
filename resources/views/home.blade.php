@@ -11,27 +11,8 @@
         </li>
     </div>
 
-    @if(\App\Models\Item::all()->count() > 0)
-        @foreach(Item::all() as $item)
-            <div class="grid grid-cols-3 gap-4 p-20">
-                <div>
-                    <img src="{{ asset('images/'.$item->pic) }}" alt="image" class="w-64 h-64">
-                </div>
-                <div>
-                    <p>{{ $item->desc }}</p>
-                </div>
-                <div>
-                    <form action="/home/{{ session('student')->username }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="id" value="{{ $item->id }}">
-                        <x-button>Remove</x-button>
-                    </form>
-                </div>
-            </div>
-        @endforeach
-    @else
-        <p class="text-center">No items found</p>    
-    @endif
+    <x-home_pic>missing</x-home_pic>
+    <x-home_pic>retrieved</x-home_pic>
 
     <form action="/home/{{ session('student')->username }}" method="POST" enctype="multipart/form-data">
         @csrf
