@@ -14,9 +14,10 @@
     <x-home_pic>missing</x-home_pic>
     <x-home_pic>retrieved</x-home_pic>
 
+    <h1 class="text-center text-2xl">Post Any Item</h1>
     <form action="/home/{{ session('student')->username }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="p-20 grid justify-items-center">
+        <div class="p-5 grid justify-items-center">
             <div>
                 <label for="type">Type</label>
                 <select name="type" id="type" class="border border-black p-2 rounded-lg" required>

@@ -11,8 +11,8 @@
             
             <x-row_data><a href="\home\{{ session('student')->username }}\{{ $item->pic }}"><img src="{{ asset('images/'.$item->pic) }}" alt="image" class="w-20 h-20"></a></x-row_data>
             <x-row_data>{{ $item->description }}</x-row_data>
-            <x-row_data>{{ \App\Models\Student::all()->where('email', $item->from)->get('name') }}</x-row_data>
-            
+            <x-row_data>{{ \App\Models\Student::where('email', $item->from)->first()->name }}</x-row_data>
+            {{-- <x-row_data>{{ $item->from }}</x-row_data> --}}
         </tr>
         @endforeach
     </table>
