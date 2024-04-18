@@ -16,6 +16,11 @@ class HomeController extends Controller
             return redirect('/');
         }
 
+        if(session('pic'))
+        {
+            session()->forget('pic');
+        }
+
         return view('home');
     }
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\PicviewController;
 use App\Models\Student;
 use App\Models\Item;
 
@@ -21,6 +22,8 @@ Route::post('/register', [RegisterController::class, 'register']);
 
 Route::get('/home/{username}', [HomeController::class, 'index']);
 Route::post('/home/{username}', [HomeController::class, 'add']);
+
+Route::get('/home/{username}/{id}', [PicviewController::class, 'index']);
 
 Route::get('profile/{username}', [ProfileController::class, 'index']);
 Route::put('profile/{username}', [ProfileController::class, 'profile_update']);
