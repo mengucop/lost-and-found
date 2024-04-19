@@ -21,10 +21,15 @@
         </div>
         <div>
             <p>Type: {{ Str::title(session('pic')->type) }}</p>
+            <p>From: {{ \App\Models\Student::where('email', session('pic')->from)->first()->name }}</p>
             <p>Uploaded At: {{ session('pic')->created_at }}</p>
             <p>Status: {{ session('pic')->status }}</p>
             <p>Description: {{ session('pic')->description }}</p>
-            <x-button>Claim</x-button>
+            @if(session('student')->email != session('pic')->from)
+                <x-button>Claim</x-button>   
+            @else
+                <x-button>Delete</x-button>
+            @endif
         </div>
     </div>
     

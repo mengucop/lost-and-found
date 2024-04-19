@@ -24,8 +24,9 @@ Route::get('/home/{username}', [HomeController::class, 'index']);
 Route::post('/home/{username}', [HomeController::class, 'add']);
 
 Route::get('/home/{username}/{id}', [PicviewController::class, 'index']);
+Route::get('/profile/{username}/{id}', [PicviewController::class, 'index']);
 
-Route::get('profile/{username}', [ProfileController::class, 'index']);
-Route::put('profile/{username}', [ProfileController::class, 'profile_update']);
+Route::get('/profile/{username}', [ProfileController::class, 'index']);
+Route::put('/profile/{username}', [ProfileController::class, 'profile_update']);
 
 Route::get('/logout', [LogoutController::class, 'logout']);

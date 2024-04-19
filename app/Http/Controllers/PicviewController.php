@@ -14,14 +14,22 @@ class PicviewController extends Controller
             return redirect('/');
         }
 
-        $path_check = url()->current();
-        $path_check = explode('/', $path_check);
-        $path_check = end($path_check);
-        $pic = Item::where('pic', $path_check)->first();
+        $path = url()->current();
+        $path_split = explode('/', $path);
+        $pic_name = end($path_split);
+        $pic = Item::where('pic', $pic_name)->first();
 
         if(!$pic)
         {
-            return redirect('/home/'.session('student')->username);
+            //return redirect('/home/'.session('student')->username);
+            if($path_split[0] == 'home')
+            {
+                return redirect('/home/'.session('student')->username);
+            }
+            else
+            {
+                return redirect('/profile/'.session('student')->username)->with('path_split', $path_split);
+            }
         }
 
         session()->put('pic', $pic);
