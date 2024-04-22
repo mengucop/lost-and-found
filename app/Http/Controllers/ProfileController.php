@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Models\Item;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -23,5 +24,18 @@ class ProfileController extends Controller
         session('student')->name = $new_name;
         Student::where('username', session('student')->username)->update(['name' => $new_name]);
         return view('profile');
+    }
+
+    public function delete()
+    {
+        foreach(Item::where('username', session('student')->username)->get() as $item)
+        {
+            File::delete('images/'.$item->pic);
+        }
+
+        Item::where('username', session('student')->username)->delete();
+        Student::where('username', session('student')->username)->delete();
+        session()->forget('student');
+        return redirect('/');
     }
 }

@@ -40,5 +40,10 @@
             <x-button>Update</x-button>
         </form>
     </div>
+
+    <h3 class="text-center text-xl">Delete Profile</h3>
+    <div class="p-5 grid place-items-center">
+        <x-delete_button>Delete</x-delete_button>
+    </div>
 </body>
 </html>

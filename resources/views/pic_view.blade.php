@@ -28,7 +28,7 @@
             @if(session('student')->email != session('pic')->from)
                 <x-button>Claim</x-button>   
             @else
-                <a href={{ "/delete/".session('pic')->pic }}><x-button>Delete</x-button></a>
+                <a href={{ "/delete/".session('pic')->pic }}><x-delete_button>Delete</x-delete_button></a>
             @endif
         </div>
     </div>
