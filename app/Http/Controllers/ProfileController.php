@@ -28,12 +28,12 @@ class ProfileController extends Controller
 
     public function delete()
     {
-        foreach(Item::where('username', session('student')->username)->get() as $item)
+        foreach(Item::where('from', session('student')->email)->get() as $item)
         {
             File::delete('images/'.$item->pic);
         }
 
-        Item::where('username', session('student')->username)->delete();
+        Item::where('from', session('student')->email)->delete();
         Student::where('username', session('student')->username)->delete();
         session()->forget('student');
         return redirect('/');
