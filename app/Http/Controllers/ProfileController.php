@@ -28,6 +28,11 @@ class ProfileController extends Controller
 
     public function delete()
     {
+        if(!session()->has('student'))
+        {
+            return redirect('/');
+        }
+        
         foreach(Item::where('from', session('student')->email)->get() as $item)
         {
             File::delete('images/'.$item->pic);

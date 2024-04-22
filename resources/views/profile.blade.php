@@ -7,6 +7,9 @@
             <a href="/home/{{ session()->get('student')->username }}"><p>Home</p></a>
         </li>
         <li class="text-sky-400 underline hover:text-sky-600">
+            <a href="/profile/{{ session()->get('student')->username }}"><p>Profile</p></a>
+        </li>
+        <li class="text-sky-400 underline hover:text-sky-600">
             <a href="/logout"><p>Logout</p></a>
         </li>
     </div>
@@ -43,7 +46,7 @@
 
     <h3 class="text-center text-xl">Delete Profile</h3>
     <div class="p-5 grid place-items-center">
-        <a href="/delete/profile"><x-delete_button>Delete</x-delete_button></a>
+        <a href="/profile/{{ session('student')->username }}/delete"><x-delete_button>Delete</x-delete_button></a>
     </div>
 </body>
 </html>
