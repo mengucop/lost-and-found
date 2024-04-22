@@ -43,7 +43,7 @@
 
     <h3 class="text-center text-xl">Delete Profile</h3>
     <div class="p-5 grid place-items-center">
-        <x-delete_button>Delete</x-delete_button>
+        <a href="/delete/profile"><x-delete_button>Delete</x-delete_button></a>
     </div>
 </body>
 </html>

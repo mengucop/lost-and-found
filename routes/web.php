@@ -29,5 +29,6 @@ Route::get('/delete/{id}', [PicviewController::class, 'delete']);
 
 Route::get('/profile/{username}', [ProfileController::class, 'index']);
 Route::put('/profile/{username}', [ProfileController::class, 'profile_update']);
+Route::get('/delete/profile', [ProfileController::class, 'delete']);
 
 Route::get('/logout', [LogoutController::class, 'logout']);
