@@ -1,18 +1,6 @@
 <x-header>{{ session('pic')->pic }}</x-header>
 <body>
-    <x-info></x-info>
-    
-    <div  class="text-center">
-        <li class="text-sky-400 underline hover:text-sky-600">
-            <a href="/home/{{ session('student')->username }}"><p>Home</p></a>
-        </li>
-        <li class="text-sky-400 underline hover:text-sky-600">
-            <a href="/profile/{{ session('student')->username }}"><p>Profile</p></a>
-        </li>
-        <li class="text-sky-400 underline hover:text-sky-600">
-            <a href="/logout"><p>Logout</p></a>
-        </li>
-    </div>
+    <x-info><x-icon></x-icon></x-info>
 
     <h1 class="text-center text-2xl">Item Details</h1>
     <div class="grid grid-row-2 gap-2">

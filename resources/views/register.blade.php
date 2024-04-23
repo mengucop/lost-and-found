@@ -1,6 +1,6 @@
 <x-header>Register</x-header>
 <body>
-    <x-info></x-info>
+    <x-info><h4 class="italic">Your Place To Go For All Sorts Of Missing Or Retrieved Items</h4></x-info>
 
     <div class="p-10 grid justify-items-center">
         <div>

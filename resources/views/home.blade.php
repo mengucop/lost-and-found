@@ -1,18 +1,6 @@
 <x-header>Homepage</x-header>
 <body>
-    <x-info></x-info>
-    
-    <div  class="text-center">
-        <li class="text-sky-400 underline hover:text-sky-600">
-            <a href="/home/{{ session()->get('student')->username }}"><p>Home</p></a>
-        </li>
-        <li class="text-sky-400 underline hover:text-sky-600">
-            <a href="/profile/{{ session()->get('student')->username }}"><p>Profile</p></a>
-        </li>
-        <li class="text-sky-400 underline hover:text-sky-600">
-            <a href="/logout"><p>Logout</p></a>
-        </li>
-    </div>
+    <x-info><x-icon></x-icon></x-info>
 
     <x-home_pic>missing</x-home_pic>
     <x-home_pic>retrieved</x-home_pic>
