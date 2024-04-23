@@ -1,5 +1,5 @@
-<div class="bg-sky-200 text-center py-2 text-xl">
-    <h1 class="text-3xl">Lost & Found</h1>
-    <br><br>
+<div class="bg-sky-200 text-center py-2 text-3xl">
+    <h1>Lost & Found</h1>
+    <br>
     {{ $slot }}
 </div>

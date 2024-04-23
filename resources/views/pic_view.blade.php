@@ -14,7 +14,7 @@
             <p>Status: {{ session('pic')->status }}</p>
             <p>Description: {{ session('pic')->description }}</p>
             @if(session('student')->email != session('pic')->from)
-                <x-button>Claim</x-button>   
+                <a href="{{ "/claim/pic/".session('pic')->pic }}"><x-button>Claim</x-button></a>
             @else
                 <a href={{ "/delete/".session('pic')->pic }}><x-delete_button>Delete</x-delete_button></a>
             @endif

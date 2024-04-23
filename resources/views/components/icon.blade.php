@@ -1,11 +1,14 @@
-<div class="text-center">
-    <li class="text-sky-400 underline hover:text-sky-600">
-        <a href="/home/{{ session()->get('student')->username }}"><p>Home</p></a>
-    </li>
-    <li class="text-sky-400 underline hover:text-sky-600">
-        <a href="/profile/{{ session()->get('student')->username }}"><p>Profile</p></a>
-    </li>
-    <li class="text-sky-400 underline hover:text-sky-600">
-        <a href="/logout"><p>Logout</p></a>
-    </li>
+<div class="flex justify-center space-x-10">
+    <div>
+        <a href="/home/{{ session()->get('student')->username }}"><abbr title="Home"><i class="fa fa-home"></i></abbr></a>
+    </div>
+    <div>
+        <a href="/profile/{{ session()->get('student')->username }}"><abbr title="Profile"><i class="fa fa-user"></i></abbr></a>
+    </div>
+    <div>
+        <a href="/claim"><abbr title="Claim"><i class="fa fa-bell"></i></abbr></a>
+    </div>
+    <div>
+        <a href="/logout"><abbr title="Logout"><i class="fa fa-power-off"></i></abbr></a>
+    </div>
 </div>

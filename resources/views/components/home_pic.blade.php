@@ -17,7 +17,7 @@
                 @if(session('student')->email == $item->from)
                     <a href="/delete/{{ $item->pic }}"><x-delete_button>Delete</x-delete_button></a>
                 @else
-                    <a href="/claim/{{ $item->pic }}"><x-button>Claim</x-button></a>
+                    <a href="/claim/pic/{{ $item->pic }}"><x-button>Claim</x-button></a>
                 @endif
             </td>
         </tr>

@@ -2,7 +2,7 @@
 <body>
     <x-info><x-icon></x-icon></x-info>
 
-    <h3 class="text-center text-xl">{{ session('student')->name }}'s Stats</h3>
+    <h3 class="text-center text-2xl">{{ session('student')->name }}'s Stats</h3>
     <div class="p-5 grid place-items-center">
         <table class="">
             <tr>
@@ -20,7 +20,7 @@
         </table>
     </div>
 
-    <h3 class="text-center text-xl">Update Profile</h3>
+    <h3 class="text-center text-2xl">Update Profile</h3>
     <div class="p-5 grid place-items-center">
         <form class="grid justify-items-center" action="/profile/{{ session('student')->username }}" method="POST">
             @csrf
@@ -32,7 +32,7 @@
         </form>
     </div>
 
-    <h3 class="text-center text-xl">Delete Profile</h3>
+    <h3 class="text-center text-2xl">Delete Profile</h3>
     <div class="p-5 grid place-items-center">
         <a href="/profile/{{ session('student')->username }}/delete"><x-delete_button>Delete</x-delete_button></a>
     </div>
