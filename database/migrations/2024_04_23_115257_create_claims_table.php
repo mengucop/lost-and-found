@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('claims', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('from');
+            $table->string('to');
+            $table->string('pic');
+            $table->string('status');
         });
     }
 
