@@ -11,10 +11,6 @@ use App\Http\Controllers\ClaimController;
 use App\Models\Student;
 use App\Models\Item;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', [LoginController::class, 'index']);
 Route::post('/', [LoginController::class, 'login']);
 
@@ -32,6 +28,9 @@ Route::get('/profile/{username}', [ProfileController::class, 'index']);
 Route::put('/profile/{username}', [ProfileController::class, 'profile_update']);
 Route::get('/profile/{username}/delete', [ProfileController::class, 'delete']);
 
-Route::get('/claim/pic/{id}', [ClaimController::class, 'index']);
+Route::get('/claim', [ClaimController::class, 'index']);
+Route::get('/claim/pic/{id}', [ClaimController::class, 'claim']);
+Route::get('/claim/approve', [ClaimController::class, 'approve']);
+Route::get('/claim/delete', [ClaimController::class, 'delete']);
 
 Route::get('/logout', [LogoutController::class, 'logout']);
