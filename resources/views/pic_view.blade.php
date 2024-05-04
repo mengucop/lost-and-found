@@ -13,7 +13,9 @@
             <p>Uploaded At: {{ session('pic')->created_at }}</p>
             <p>Status: {{ session('pic')->status }}</p>
             <p>Description: {{ session('pic')->description }}</p>
-            @if(session('student')->email != session('pic')->from)
+            @if(\App\Models\Claim::where("claimed_by", session("student")->email)->where("pic", session('pic')->pic)->count() > 0)
+                    <x-pending_button>Claimed</x-pending_button>
+            @elseif(session('student')->email != session('pic')->from)
                 <a href="{{ "/claim/pic/".session('pic')->pic }}"><x-button>Claim</x-button></a>
             @else
                 <a href={{ "/picview/delete/".session('pic')->pic }}><x-delete_button>Delete</x-delete_button></a>

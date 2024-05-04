@@ -32,11 +32,11 @@ class ClaimController extends Controller
         }
 
         $item = Item::where('pic', $pic_name)->first();
-        $item->status = 'Pending';
+        Item::where('pic', $pic_name)->update(['status' => 'Pending']);
 
         $claim = new Claim;
         $claim->claimed_by = session('student')->email;
-        $claim->claimed_to = $pic->email;
+        $claim->claimed_to = $item->from;
         $claim->pic = $pic->pic;
         $claim->status = 'Pending';
         $claim->save();
