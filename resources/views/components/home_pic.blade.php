@@ -17,7 +17,7 @@
                 @if(session('student')->email == $item->from)
                     <a href="/picview/delete/{{ $item->pic }}"><x-delete_button>Delete</x-delete_button></a>
                 @elseif(\App\Models\Claim::where("claimed_by", session("student")->email)->where("pic", $item->pic)->count() > 0)
-                    <x-pending_button>Claimed</x-pending_button>
+                    <a href="/claim/pic/{{ $item->pic }}"><x-pending_button>Claimed</x-pending_button></a>
                 @else
                     <a href="/claim/pic/{{ $item->pic }}"><x-button>Claim</x-button></a>
                 @endif

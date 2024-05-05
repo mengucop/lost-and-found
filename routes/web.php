@@ -30,7 +30,7 @@ Route::get('/profile/{username}/delete', [ProfileController::class, 'delete']);
 
 Route::get('/claim', [ClaimController::class, 'index']);
 Route::get('/claim/pic/{id}', [ClaimController::class, 'claim']);
-Route::get('/claim/approve', [ClaimController::class, 'approve']);
-Route::get('/claim/delete', [ClaimController::class, 'delete']);
+Route::get('/claim/approve/{student}/{id}', [ClaimController::class, 'approve']);
+Route::get('/claim/delete/{student}/{id}', [ClaimController::class, 'delete']);
 
 Route::get('/logout', [LogoutController::class, 'logout']);

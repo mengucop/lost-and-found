@@ -26,37 +26,46 @@ class ClaimController extends Controller
         $pic_name = end($path_split);
         $pic = Item::where('pic', $pic_name)->first();
 
-        if(!$pic)
+        if($pic->status == 'Pending')
         {
-            return redirect('/home/'.session('student')->username);
+            Item::where('pic', $pic_name)->update(['status' => 'Unresolved']);
+            Claim::where('pic', $pic_name)->where('claimed_by', session('student')->email)->delete();
+        }
+        else
+        {
+            Item::where('pic', $pic_name)->update(['status' => 'Pending']);
+            $claim = new Claim;
+            $claim->claimed_by = session('student')->email;
+            $claim->claimed_to = $pic->from;
+            $claim->pic = $pic->pic;
+            $claim->status = 'Pending';
+            $claim->save();
         }
 
-        $item = Item::where('pic', $pic_name)->first();
-        Item::where('pic', $pic_name)->update(['status' => 'Pending']);
-
-        $claim = new Claim;
-        $claim->claimed_by = session('student')->email;
-        $claim->claimed_to = $item->from;
-        $claim->pic = $pic->pic;
-        $claim->status = 'Pending';
-        $claim->save();
-
-        return redirect('/home/'.session('student')->username);
+        return redirect(url()->previous());
+        // return redirect('/home/'.session('student')->username);
     }
 
-    public function approve(Request $request)
+    public function approve()
     {
         if(!session('student'))
         {
             return redirect('/');
         }
 
+        $path = url()->current();
+        $path_split = explode('/', $path);
+        $pic_name = end($path_split);
         
+        $pic = Item::where('pic', $pic_name)->first();
+        $claimed_by = $path_split[count($path_split) - 2];
+        $claimed_to = session('student')->email;
 
+        
         return redirect('/claim');
     }
 
-    public function delete(Request $request)
+    public function delete()
     {
         if(!session('student'))
         {

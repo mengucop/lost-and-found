@@ -14,7 +14,7 @@
             <p>Status: {{ session('pic')->status }}</p>
             <p>Description: {{ session('pic')->description }}</p>
             @if(\App\Models\Claim::where("claimed_by", session("student")->email)->where("pic", session('pic')->pic)->count() > 0)
-                    <x-pending_button>Claimed</x-pending_button>
+                <a href="{{ "/claim/pic/".session('pic')->pic }}"><x-pending_button>Claimed</x-pending_button></a>
             @elseif(session('student')->email != session('pic')->from)
                 <a href="{{ "/claim/pic/".session('pic')->pic }}"><x-button>Claim</x-button></a>
             @else

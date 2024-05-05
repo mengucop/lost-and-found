@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         $request->validate([
             'description' => 'required',
-            'pic' => 'required|mimes:png,jpg,jpeg,gif|max:10240',
+            'pic' => 'required|mimes:png,jpg,jpeg,gif,webp|max:10240',
             'type' => 'required'
         ]);
 
