@@ -11,7 +11,14 @@ class ClaimController extends Controller
 {
     public function index()
     {
-        return view('claim');
+        if(!session('student'))
+        {
+            return redirect('/');
+        }
+
+        $claims = Claim::all()->where("claimed_to", session("student")->email)
+        ->orWhere("claimed_by", session("student")->email);
+        return view('claim')->with('claims', $claims);
     }
 
     public function claim()
