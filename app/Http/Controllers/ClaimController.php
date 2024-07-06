@@ -16,8 +16,7 @@ class ClaimController extends Controller
             return redirect('/');
         }
 
-        $claims = Claim::all()->where("claimed_to", session("student")->email)
-        ->orWhere("claimed_by", session("student")->email);
+        $claims = Claim::where("claimed_to", session("student")->email)->orWhere("claimed_by", session("student")->email)->get();
         return view('claim')->with('claims', $claims);
     }
 

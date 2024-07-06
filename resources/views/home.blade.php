@@ -10,20 +10,21 @@
         @csrf
         <div class="p-5 grid justify-items-center">
             <div>
-                <label for="type">Type</label>
+                <label for="type">Type:</label>
                 <select name="type" id="type" class="border border-black p-2 rounded-lg" required>
                     <option value="missing">Missing</option>
                     <option value="retrieved">Retrieved</option>
                 </select>
             </div>
             <div>
-                <label for="description">Add Description</label>
+                <label for="description">Add Description:</label>
                 <input type="text" name="description" id="description" class="border border-black p-2 rounded-lg" required>
             </div>
             <div>
-                <label for="pic">Add an Image</label>
+                <label for="pic">Add an Image:</label>
                 <input type="file" name="pic" id="pic" class="border border-black p-2 rounded-lg" required>
             </div>
+            <br>
             <div>
                 <x-button>Upload</x-button>
             </div>
