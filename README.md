@@ -1,16 +1,23 @@
-<div style="text-align: center;">
-    <h1>Lost and Found</h1>
-    <h3><i>Your Place To Go For All Sorts Of Missing Or Retrieved Items</i></h3>
-</div>
+This is a Laravel-based web application designed to help students and staff at [Your University Name or UiTM] report, track, and recover lost or found items on campus. The system provides a user-friendly platform with features tailored to ensure transparency, ethical posting, and efficient item management.
 
-<div>
-    <h1>What's In Here?</h1>
-    <p>The project contains the most common featues that a <i>Lost and Found</i> section can have, including:
-    <ul>
-    <li>Login and Registration System</li>
-    <li>Picture Upload of Items</li>
-    <li>Claim Items With Notifications</li>
-    <li>Stats Check</li>
-    </ul>
-    </p>
-<div>
+✨ Features
+🔐 User Authentication – Secure login and registration for students and admins.
+
+📍 Interactive Map – View reported items on a real-time map with location clustering.
+
+🧾 Post Lost or Found Items – Submit detailed reports including item descriptions, categories, photos, and locations.
+
+✅ Ethical Verification – Posts go through an ethical confirmation step before submission.
+
+🛠️ Admin Panel – Manage items, users, and review flagged content for moderation.
+
+💬 Responsive UI – Built with Tailwind CSS featuring a modern, cyberpunk-inspired design.
+
+🛠️ Tech Stack
+Backend: Laravel
+
+Frontend: Blade, Tailwind CSS, Leaflet.js (for maps)
+
+Database: MySQL
+
+Development: Laragon (Windows environment)
