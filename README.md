@@ -1,4 +1,4 @@
-This is a Laravel-based web application designed to help students and staff at [Your University Name or UiTM] report, track, and recover lost or found items on campus. The system provides a user-friendly platform with features tailored to ensure transparency, ethical posting, and efficient item management.
+This is a Laravel-based web application designed to help students and staff at UiTM report, track, and recover lost or found items on campus. The system provides a user-friendly platform with features tailored to ensure transparency, ethical posting, and efficient item management.
 
 ✨ Features
 🔐 User Authentication – Secure login and registration for students and admins.
